@@ -1,7 +1,8 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Calculator from "./components/Calculator";
-import Home from "./pages/Home"
+import Home from "./pages/Home";
 import ShoppingCart from "./components/ShoppingCart";
+import Cart from "./components/Cart";
 
 function App() {
   return (
@@ -10,6 +11,7 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/Calculator" element={<Calculator />} />
         <Route path="/ShoppingCart" element={<ShoppingCart />} />
+        <Route path="/Cart" element={<Cart />} />
       </Routes>
     </BrowserRouter>
   );
