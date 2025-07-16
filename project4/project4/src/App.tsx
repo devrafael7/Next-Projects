@@ -4,6 +4,7 @@ import Home from "./pages/Home";
 import ShoppingCart from "./components/ShoppingCart";
 import Cart from "./components/Cart";
 import CartTest from "./components/CartTest";
+import Notebook from "./components/Notebook";
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
         <Route path="/ShoppingCart" element={<ShoppingCart />} />
         <Route path="/Cart" element={<Cart />} />
         <Route path="/CartTest" element={<CartTest />} />
+        <Route path="/Notebook" element={<Notebook />} />
       </Routes>
     </BrowserRouter>
   );
