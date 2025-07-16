@@ -1,4 +1,6 @@
 import React, { useState } from "react";
+import { FaTrash } from "react-icons/fa";
+
 
 type Cart = {
   id: number;
@@ -20,13 +22,18 @@ export default function Cart() {
     };
 
     setItems([...items, newItem]);
-    setItemID('');
-    setItemCategory('');
+    setItemID("");
+    setItemCategory("");
   };
+
+  const removeItem = (id: number) => {
+    const updatedItems = items.filter(item => item.id !== id);
+    setItems(updatedItems);
+  }
 
   console.log(items);
   return (
-    <div className="w-full flex flex-col">
+    <div className="w-full flex flex-col px-4">
       <h1 className="text-2xl self-center my-4">Cart Items</h1>
 
       <form
@@ -61,8 +68,11 @@ export default function Cart() {
       </form>
 
       {items.map((i) => (
-        <span className="text-md mb-1" key={i.id}>
-          <span className="font-semibold">{i.id}</span> - {i.category}
+        <span className="text-md mb-1 flex justify-between" key={i.id}>
+          <div>
+            <span className="font-semibold">{i.id}</span> - {i.category}
+          </div>
+          <FaTrash onClick={()=> removeItem(i.id)} className="cursor-pointer hover:scale-110 transition-all hover:text-red-500"/>
         </span>
       ))}
     </div>
