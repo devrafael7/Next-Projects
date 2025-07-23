@@ -8,6 +8,7 @@ import Notebook from "./components/Notebook";
 import ValidatePassword from "./components/ValidatePassword";
 import Filter from "./components/Filter";
 import TypeFilter from "./components/TypeFilter";
+import Filtering from "./components/Filtering";
 
 function App() {
   return (
@@ -22,6 +23,7 @@ function App() {
         <Route path="/ValidatePassword" element={<ValidatePassword />} />
         <Route path="/Filter" element={<Filter />} />
         <Route path="/TypeFilter" element={<TypeFilter />} />
+        <Route path="/Filtering" element={<Filtering />} />
       </Routes>
     </BrowserRouter>
   );
