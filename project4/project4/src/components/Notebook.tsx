@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { CiLight } from "react-icons/ci";
+import { CiDark } from "react-icons/ci";
 
 
 export default function Notebook() {
@@ -8,6 +9,7 @@ export default function Notebook() {
 
     const [light, setLight] = useState(false);
 
+    const ThemeIcon = light ? CiDark : CiLight
   return (
     <div className={`${light ? "bg-gray-200" : "bg-gray-900"} px-5 py-5 w-full flex flex-col min-h-screen relative transition-all`}>
         <h1 className={`${light ? "text-black" : "text-white"} text-2xl self-center mb-7`}>
@@ -23,7 +25,7 @@ export default function Notebook() {
         <ul>
             {notes.map((note, i) => <li key={i}>{note}</li>)}
         </ul>
-        <CiLight onClick={()=> setLight(!light)} className={`${light ? "text-black border-black" : "text-white border-gray-400"} text-4xl border-solid border rounded-full p-1 cursor-pointer absolute bottom-5`}/>
+        <ThemeIcon onClick={()=> setLight(!light)} className={`${light ? "text-black border-black" : "text-white border-gray-400"} text-4xl border-solid border rounded-full p-1 cursor-pointer absolute bottom-5`}/>
     </div>
   );
 }
